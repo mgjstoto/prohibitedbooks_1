@@ -4,24 +4,68 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		body,h1,h2,h3,p{margin:0; padding: 0}
-		.img-wrap{position: relative;}
-		.img-wrap .uni{width: 100%; display: block;}
-		.img-wrap .book{width: 80%; position: absolute;  display: block; top: 5%; left: 11%}
+		body, h1, h2, h3, p {
+		    margin: 0;
+		    padding: 0;
+		}
 
-		#popup0 { width: 50%; top: 19%; left: 25%; transform: translateY(-150%)}  
-		#popup1 { width: 60%; top: 10%; left: 21%; transform: translateY(-150%)} 
-		#popup2 { width: 40%; top: 71%; left: 33.4%; transform: translateY(-900%);}  
-		#popup3 { width: 60%; top: 10%; left: 21%; transform: translateY(-150%); }  
+		body {
+		    overflow: hidden;  
+		    background: #000;
+		}
+
+		.img-wrap {
+		    position: relative;
+		    width: 100vw;
+		    height: 100vh;     
+		    overflow: hidden;   
+		}
 
 
-		#popup4 { width: 3%; top: 47.5%; left: 35.4%; transform: translateY(-1100%); }  
-		#popup5  { width: 3%; top: 47.5%; left: 43.9%;   transform: translateY(-1100%); }
-		#popup6  { width: 3%; top: 47.5%; left: 53.9%;   transform: translateY(-1100%); }
-		#popup7  { width: 3%; top: 47.5%; left: 62.8%;   transform: translateY(-1100%); }
-		#popup8  { width: 40%; top: 71%; left: 33.4%;   transform: translateY(-1100%); }
+		.img-wrap .uni {
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    object-fit: cover;  
+		    display: block;
+		}
 
-			
+		.img-wrap .book {
+		    width: 80%;
+		    position: absolute;
+		    display: block;
+		    top: 5%;
+		    left: 11%;
+		}
+
+
+		.img-wrap .popup {
+		    position: absolute;
+		    transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+		    z-index: 100;
+		}
+
+		.img-wrap .popup.show {
+		    transform: translateY(0) !important;
+		}
+
+		.img-wrap .popup.hide {
+		    transform: translateY(-1500%) !important;
+		    transition: transform 0.45s cubic-bezier(0.55, 0, 1, 0.45);
+		}
+
+		/* 각 팝업 위치는 그대로 유지 */
+		#popup0 { width: 50%; top: 19%; left: 25%; transform: translateY(-150%); }
+		#popup1 { width: 60%; top: 10%; left: 21%; transform: translateY(-150%); }
+		#popup2 { width: 40%; top: 71%; left: 33.4%; transform: translateY(-900%); }
+		#popup3 { width: 60%; top: 10%; left: 21%; transform: translateY(-150%); }
+		#popup4 { width: 3%; top: 47.5%; left: 35.4%; transform: translateY(-1100%); }
+		#popup5 { width: 3%; top: 47.5%; left: 43.9%; transform: translateY(-1700%); }
+		#popup6 { width: 3%; top: 47.5%; left: 53.9%; transform: translateY(-1100%); }
+		#popup7 { width: 3%; top: 47.3%; left: 62.8%; transform: translateY(-1100%); }
+		#popup8 { width: 40%; top: 73%; left: 34%; transform: translateY(-1700%); }
+
+					
 		.img-wrap .popup{         
 			position: fixed;     
 			transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -56,10 +100,7 @@
 		<img src="img10.png" class="popup" id="popup6">
 		<img src="img11.png" class="popup" id="popup7">
 		<img src="img7.png"  class="popup" id="popup8"> 
-
-
-
-	</div>
+    </div>
 </section>
 <script>
 	const popups = [
@@ -137,6 +178,19 @@ popups[1].addEventListener('click', (e) => {
 popups[4].addEventListener('click', (e) => {
     e.stopPropagation();
     window.location.href = 'https://mgjstoto.github.io/prohibitedbooks_2/'; 
+});
+
+popups[5].addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.location.href = 'https://mgjstoto.github.io/prohibitedbooks_8/';
+});
+popups[6].addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.location.href = 'https://mgjstoto.github.io/prohibitedbooks_11/';
+});
+popups[7].addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.location.href = 'https://mgjstoto.github.io/prohibitedbooks_11/';
 });
 </script>
 </body>
